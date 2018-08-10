@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgIfComponent implements OnInit {
 
+  courses: string[] = [];
+
+  langs: string[] = ['JS', 'AngularJS', 'NodeJS'];
+
+  flag: boolean = true;
+  flag2: boolean = false;
+
+  flagChange() {
+    this.flag = !this.flag;
+  }
+
   constructor() { }
 
   ngOnInit() {
