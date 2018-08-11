@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgSwitchComponent implements OnInit {
 
+  tab: string = 'home';
+
   constructor() { }
 
   ngOnInit() {

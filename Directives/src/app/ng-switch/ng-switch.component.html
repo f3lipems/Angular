@@ -1,3 +1,35 @@
-<p>
-  ng-switch works!
-</p>
+<h3>*ngSwitch</h3>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#" (click)="tab = 'home'">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      
+      <a class="nav-item nav-link" 
+        [class.active]="tab == 'home'"
+        (click)="tab = 'home'">Home</a>
+
+      <a class="nav-item nav-link" 
+        [class.active]="tab == 'features'"
+        (click)="tab = 'features'">Features</a>
+
+      <a class="nav-item nav-link" 
+        [class.active]="tab == 'pricing'"
+        (click)="tab = 'pricing'">Pricing</a>
+      
+      <a class="nav-item nav-link" 
+        [class.active]="tab == 'default'"
+        (click)="tab = 'default'">Default</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container" [ngSwitch]="tab">
+  <p *ngSwitchCase="'home'">Opção Home</p>
+  <p *ngSwitchCase="'features'">Opção Features</p>
+  <p *ngSwitchCase="'pricing'">Opção Pricing</p>
+  <p *ngSwitchDefault>Opção Default</p>
+</div>

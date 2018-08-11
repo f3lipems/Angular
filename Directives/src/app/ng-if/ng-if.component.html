@@ -1,4 +1,4 @@
-<h3>*ngif</h3>
+<h3>*ngIf</h3>
 
 <div *ngIf="courses.length == 0">
   Nenhum item relacionado
@@ -13,7 +13,7 @@
 </div>
 
 <div *ngIf="langs.length > 0">
-  Lista de Tecnologias
+  Lista
 </div>
 
 
@@ -25,7 +25,7 @@
   <p>Paragrafo ativado pela flag</p>
 </div>
 
-<button (click)="flagChange()">Mudar Flag</button>
+<button class="btn" (click)="flagChange()">Mudar Flag</button>
 
 <div [hidden]="!flag">
   Pagrafo alterando o [hidden]="!flag" pela flag
