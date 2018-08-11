@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgStyleComponent implements OnInit {
 
+  active: boolean = false;
+  fontSz: string = '10';
+
+  changeActive() {
+    this.active = !this.active;
+  }
+
   constructor() { }
 
   ngOnInit() {
