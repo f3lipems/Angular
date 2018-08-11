@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgForComponent implements OnInit {
 
+  tec: string[] = ['JS', 'Node', 'Angular', 'Ionic'];
+
   constructor() { }
 
   ngOnInit() {
