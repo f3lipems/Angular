@@ -1,0 +1,141 @@
+<section>
+  <article>
+    <h3>
+      Data Binding
+    </h3>
+    
+    <p>
+      Url declarada com interpolação: {{ url }}
+    </p>
+
+    <p>
+      Resultado da soma realizado por inporlação: 1 + 1 = {{1 + 1}}
+    </p>
+    
+    <p>
+      Interpolação de função 1 + 1 não é {{1 + 1 + getValor()}}
+    </p>
+    
+    <p>
+      Interpolação de url de imagem 
+      <!-- <img src="{{ urlImagem }}" alt=""> -->
+    </p>
+    
+    <p>
+      Interpolação de url de imagem com propert Binding
+      <!-- <img [src]="urlImagem" alt=""> -->
+    </p>
+    
+    <p>
+      Interpolação de url de imagem com propert Binding em forma padrão
+      <!-- <img bind-src="urlImagem" alt=""> -->
+    </p>    
+  </article>
+
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      Selecione uma classe
+
+      <select #alerta (change)="0">
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Alerta</option>
+        <option value="alert-danger">Erro</option>
+      </select>
+      <br>
+      <br>
+    
+      <div class="alert {{alerta.value}}">
+        Texto na cor do alerta
+      </div>
+
+      <div class="alert alert-success" role="alert"
+      [class.alert-success]="alerta.value == 'alert-success'">
+        A simple success alert—check it out!
+      </div>
+
+      <div class="alert alert-info" role="alert"
+      [class.alert-info]="alerta.value == 'alert-info'">
+        A simple danger alert—check it out!
+      </div>
+
+      <div class="alert alert-warning" role="alert"
+      [class.alert-warning]="alerta.value == 'alert-warning'">
+        A simple warning alert—check it out!
+      </div>
+
+      <div class="alert alert-danger" role="alert"
+      [class.alert-danger]="alerta.value == 'alert-danger'">
+        A simple info alert—check it out!
+      </div>
+      
+      <div class="alert alert-danger" role="alert"
+        [style.display]="alerta.value == 'alert-danger' ? 'block' : 'none'">
+        A simple info alert—check it out!
+      </div>
+
+    </div>
+  </article>
+
+  <article>
+    <h3>Event Binding</h3>
+
+    <div>
+      <button (click)="buttonClicked()"
+        class="btn btn-primary"> Click </button>
+    </div>
+
+    <br><br>
+
+    <input type="text"
+      (keyup)="onKeyUp($event)"
+      (keyup.enter)="saveValue($event.target.value)"
+      (blur)="saveValue($event.target.value)">
+
+    <p>Valor digitado: {{inputValue}}</p>
+    <p>Valor salvo: {{inputValue2}}</p>
+
+    <br>
+
+    <span
+      (mouseover)="onMouseOverOut()"
+      (mouseout)="onMouseOverOut()"
+      [class.highlight]="isMouseOver">
+      Passe o mause
+    </span>
+
+    <br>
+
+    <span
+      on-mouseover="onMouseOverOut()"
+      on-mouseout="onMouseOverOut()"
+      [class.highlight]="isMouseOver">
+      Passe o mause (evento na forma padrão)
+    </span>
+
+  </article>
+
+  <br><br>
+
+  <app-form></app-form>
+
+  <br><br>
+
+  <section class="input-output-properts">
+    <article>
+      <h3>Input | Output | Properties</h3>
+
+      <app-imput-property [course]="nameCourse"></app-imput-property>
+      
+      <app-output-property value="10"></app-output-property>
+
+      <app-output-property [value]="contValue"
+        (newValue)="onNewValue($event)"
+      ></app-output-property>
+
+    </article>
+
+  </section>
+  
+</section>

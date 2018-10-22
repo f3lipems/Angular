@@ -1,0 +1,21 @@
+<h3>*ngClas</h3>
+
+<h1>
+  <i class="glyphicon"
+    [class.glyphicon-star-empty]="!favorite"
+    [class.glyphicon-star]="favorite"
+    (click)="favorite = !favorite"
+  ></i>
+</h1>
+
+<h1>
+  <i class="glyphicon"
+    [ngClass]="{
+      'glyphicon-star-empty': icon == 'star-empty',
+      'glyphicon-star': icon == 'star',
+      'glyphicon-ok': icon == 'glyphicon-ok',
+      'glyphicon-asterisk': icon == 'glyphicon-asterisk'
+    }"
+    (click)="onClick()"
+  ></i>
+</h1>
